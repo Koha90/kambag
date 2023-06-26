@@ -1,0 +1,20 @@
+// Overwrite theme variables.
+
+// Quick test.
+$primary: #36A9E1;
+$secondary: #E4F7F8;
+$primecard: #12597B;
+$maintext: #0C102E;
+
+@import "~bootstrap/scss/_functions";
+@import "~bootstrap/scss/_variables";
+
+$custom-theme-colors: (
+  "primecard": $primecard,
+  "maintext": $maintext
+);
+
+$theme-colors: map-merge($theme-colors, $custom-theme-colors);
+
+@import "~bootstrap/scss/bootstrap.scss";
+
