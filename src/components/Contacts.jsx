@@ -4,7 +4,7 @@ import YandexMap from "./YandexMap";
 
 const Contacts = () => {
   return (
-    <>
+    <section id="contacts">
       <h2 className="h2 h2-custom text-center">Контакты</h2>
       <Row className="g-2 row-custom">
         <div className="col-md-6 text-contacts">
@@ -31,7 +31,7 @@ const Contacts = () => {
           border: "none",
         }}
       />
-    </>
+    </section>
   );
 };
 

@@ -50,10 +50,12 @@ const Header = () => {
     >
       <Container>
         <Navbar.Brand>
-          <img
-            src={logo}
-            style={{ maxWidth: 150 }}
-          />
+          <a href="#main">
+            <img
+              src={logo}
+              style={{ maxWidth: 150 }}
+            />
+          </a>
         </Navbar.Brand>
         <Navbar.Toggle />
         <Navbar.Collapse className="justify-content-end">

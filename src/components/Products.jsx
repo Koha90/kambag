@@ -7,7 +7,7 @@ const productDescs = [
   {
     title: "Одностропные МКР",
     img: "../img/1-line.png",
-    link: "#Products",
+    link: "#products",
   },
   {
     title: "Двухстропные МКР",
@@ -40,7 +40,7 @@ const productItems = productDescs.map((item) => (
 
 const Products = () => {
   return (
-    <Container>
+    <Container id="products">
       <h2 className="h2 h2-custom text-center">
         Продукция
       </h2>

@@ -4,7 +4,7 @@ import logo from "../img/logo.png";
 
 const AboutCompany = () => {
   return (
-    <>
+    <section id="about">
       <h2 className="h2 h2-custom text-center">О компании КамБэг</h2>
       <Row>
         <div className="col-md-7">
@@ -38,7 +38,7 @@ const AboutCompany = () => {
           border: "none",
         }}
       />
-    </>
+    </section>
   );
 };
 

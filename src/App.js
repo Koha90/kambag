@@ -1,22 +1,20 @@
-import Container from "react-bootstrap/Container";
 import "./App.scss";
+import Container from "react-bootstrap/Container";
 import AboutCompany from "./components/AboutCompany";
-import CarouselMain from "./components/Carousel";
 import Contacts from "./components/Contacts";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Products from "./components/Products";
 import UtpCard from "./components/UtpCards";
+import CarouselMain from "./components/Carousel";
+
+import React from "react";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App" id="main">
       <Header />
-      <main style={{ background: "#6CB9D8" }}>
-        <Container>
-          <CarouselMain />
-        </Container>
-      </main>
+      <CarouselMain />
       <Container>
         <UtpCard />
         <Products />
