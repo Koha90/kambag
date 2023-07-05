@@ -1,0 +1,51 @@
+.h2-custom {
+  color: #0C102E;
+  font-size: 4rem;
+  font-family: Roboto;
+  font-weight: 700;
+  margin-top: 6.25rem;
+  margin-bottom: 5rem;
+}
+
+.row-custom {
+  margin-bottom: 100px;
+}
+
+.col-custom {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+}
+
+.btn-custom {
+   width: 250px;
+   height: 50px;
+   border-radius: 20px;
+   font-size: 1.5rem;
+   font-weight: 700;
+}
+
+.text-about {
+  font-family: Roboto;
+  font-size: 1.25rem;
+  line-height: 150%;
+  text-align: justify;
+  text-indent: 50px;
+}
+
+.text-contacts {
+  font-family: Roboto;
+  font-size: 2rem;
+}
+
+.map {
+  width: 100%;
+  height: 100%;
+}
+
+@media screen and (max-width: 810px) {
+  .text-contacts {
+    font-size: 1.5rem;
+  }
+}

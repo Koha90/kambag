@@ -1,12 +1,7 @@
 import Container from "react-bootstrap/Container";
-import Modal from "react-bootstrap/Modal";
-import Col from "react-bootstrap/Col";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import ModalOrder from "./ModalOrder";
-import Button from "react-bootstrap/Button";
-import Form from "react-bootstrap/Form";
-import { useState } from "react";
 
 import logo from "../img/logo.png";
 
@@ -30,7 +25,7 @@ const navItems = [
 ];
 
 const listNavItems = navItems.map((item) => (
-  <Nav>
+  <Nav key={item.link}>
     <Nav.Link
       href={item.link}
       key={item.link}
@@ -43,7 +38,16 @@ const listNavItems = navItems.map((item) => (
 
 const Header = () => {
   return (
-    <Navbar expand="lg" sticky="top">
+    <Navbar
+      expand="lg"
+      sticky="top"
+      style={{
+        position: "fixed",
+        top: "0",
+        left: "0",
+        width: "100%",
+      }}
+    >
       <Container>
         <Navbar.Brand>
           <img
