@@ -8,6 +8,7 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "bootstrap": "^5.3.0",
+    "imagemin-webp": "^8.0.0",
     "react": "^18.2.0",
     "react-bootstrap": "^2.8.0",
     "react-dom": "^18.2.0",
@@ -17,6 +18,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "build:images": "imagemin src/img/**/*.{jpg,png} --out-dir=src/img --plugin=imagemin-webp",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -39,5 +41,9 @@
       "last 1 chrome version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "imagemin": "^8.0.1",
+    "imagemin-webp": "^8.0.0"
   }
 }

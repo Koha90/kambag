@@ -1,40 +1,25 @@
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import { Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import React from "react";
+import ProductData from "./ProductData";
 
-const productDescs = [
-  {
-    title: "Одностропные МКР",
-    img: "../img/1-line.png",
-    link: "#products",
-  },
-  {
-    title: "Двухстропные МКР",
-    img: "../img/2-line.png",
-    link: "#items",
-  },
-  {
-    title: "Четырёхстропные МКР",
-    img: "../img/4-lines.png",
-    link: "#Products",
-  },
-];
 
-const productItems = productDescs.map((item) => (
+const productItems = ProductData.map((item) => (
   <Col
     md={4}
     className="col-custom"
-    key={item.title}
+    key={item.id}
   >
     <h4 style={{ marginBottom: "30px" }}>{item.title}</h4>
     <img src={item.img} style={{ maxWidth: "210px", marginBottom: "80px" }} />
-    <Button
-      href={item.link}
-      className="text-secondary btn-custom"
+    <Link
+      to={`/products/${item.id}`}
+      className="btn btn btn-primary text-secondary btn-custom"
     >
       Подробнее
-    </Button>
+    </Link>
   </Col>
 ));
 
