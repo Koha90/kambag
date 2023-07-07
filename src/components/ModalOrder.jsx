@@ -43,36 +43,34 @@ const OrderModal = (props) => {
     e.preventDefault();
     // Ваш код для обработки отправки формы
     const formData = new FormData();
-    formData.append('name', name);
-    formData.append('phone', phone);
-    formData.append('email', email);
-    formData.append('quantity', quantity);
-    formData.append('variants', variants);
-    formData.append('notes', notes);
+    formData.append("name", name);
+    formData.append("phone", phone);
+    formData.append("email", email);
+    formData.append("quantity", quantity);
+    formData.append("variants", variants);
+    formData.append("notes", notes);
 
     // Отправляем данные на сервер с использованием Fetch API
-    fetch('/send-email.php', {
-      method: 'POST',
+    fetch("http://localhost:8080/sumit-form", {
+      method: "POST",
       body: formData,
     })
       .then((response) => response.json())
       .then((data) => {
         if (data.success) {
           // Успешно отправлено
-          alert('Заказ успешно отправлен!');
+          alert("Заказ успешно отправлен!");
           // handleClose();
         } else {
           // Ошибка при отправке
-          alert('Произошла ошибка при отправке заказа.');
+          alert("Произошла ошибка при отправке заказа.");
         }
       })
       .catch((error) => {
-        console.error('Произошла ошибка:', error);
-        alert('Произошла ошибка при отправке заказа.');
+        console.error("Произошла ошибка:", error);
+        alert("Произошла ошибка при отправке заказа.");
       });
   };
-
-
 
   return (
     <Modal

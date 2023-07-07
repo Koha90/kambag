@@ -16,8 +16,8 @@ export const cardItems = [
     title: "Биг-Бэг (МКР) Двустропный",
     description: {
       loadCapacity: "от 500кг до 2 тонн",
-      size: "75*75*125 см и по индивидуальным заявкам",
-      volume: "700 литров и по индивидуальным заявкам",
+      size: "стандартные и по индивидуальным заявкам",
+      volume: "стандартные и по индивидуальным заявкам",
     },
     image: "../img/2x-string.png",
   },
@@ -25,8 +25,8 @@ export const cardItems = [
     title: "Биг-Бэг (МКР) Одностропный",
     description: {
       loadCapacity: "от 500кг до 2 тонн",
-      size: "75*75*125 см и по индивидуальным заявкам",
-      volume: "700 литров и по индивидуальным заявкам",
+      size: "стандартные и по индивидуальным заявкам",
+      volume: "стандартные и по индивидуальным заявкам",
     },
     image: "../img/1-line.png",
   },
@@ -34,8 +34,8 @@ export const cardItems = [
     title: "Биг-Бэг (МКР) Четырёхстропный",
     description: {
       loadCapacity: "от 500кг до 2 тонн",
-      size: "75*75*125 см и по индивидуальным заявкам",
-      volume: "700 литров и по индивидуальным заявкам",
+      size: "стандартные и по индивидуальным заявкам",
+      volume: "стандартные и по индивидуальным заявкам",
     },
     image: "../img/4-lines.png",
   },
@@ -50,7 +50,8 @@ const carouselItems = cardItems.map((item) => (
             <Card.Body className="d-flex flex-column align-items-start">
               <Card.Title>{item.title}</Card.Title>
               <Card.Text style={{ margin: "40% auto" }}>
-                <strong>Грузоподъёмность</strong>: {item.description.loadCapacity}
+                <strong>Грузоподъёмность</strong>:{" "}
+                {item.description.loadCapacity}
                 <br />
                 <strong>Размер:</strong> {item.description.size}
                 <br />
