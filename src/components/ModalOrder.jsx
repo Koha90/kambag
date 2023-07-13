@@ -39,37 +39,39 @@ const OrderModal = (props) => {
     return phonePattern.test(phoneNumber);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Ваш код для обработки отправки формы
-    const formData = new FormData();
+
+    const formData = new URLSearchParams();
     formData.append("name", name);
     formData.append("phone", phone);
     formData.append("email", email);
     formData.append("quantity", quantity);
-    formData.append("variants", variants);
+    formData.append("variants", variants.join(",")); // Преобразование массива в строку
     formData.append("notes", notes);
-
     // Отправляем данные на сервер с использованием Fetch API
-    fetch("http://localhost:8080/sumit-form", {
-      method: "POST",
-      body: formData,
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        if (data.success) {
-          // Успешно отправлено
-          alert("Заказ успешно отправлен!");
-          // handleClose();
-        } else {
-          // Ошибка при отправке
-          alert("Произошла ошибка при отправке заказа.");
-        }
-      })
-      .catch((error) => {
-        console.error("Произошла ошибка:", error);
-        alert("Произошла ошибка при отправке заказа.");
+    try {
+      const response = await fetch("http://localhost:8080/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: formData.toString(),
       });
+
+      if (response.ok) {
+        // Успешно отправлено
+        alert("Заказ успешно отправлен!");
+        props.onHide();
+        console.log("Form data:", formData);
+      } else {
+        // Ошибка при отправке
+        alert("Произошла ошибка при отправке заказа.");
+      }
+    } catch (error) {
+      console.error("Произошла ошибка:", error);
+      alert("Произошла ошибка при отправке заказа.");
+    }
   };
 
   return (
